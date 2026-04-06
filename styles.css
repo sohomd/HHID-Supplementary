@@ -138,3 +138,10 @@ pre {
   padding: 30px 0;
   color: #777;
 }
+.subtitle {
+  color: #ccc;
+}
+
+.meta {
+  color: #aaa;
+}
