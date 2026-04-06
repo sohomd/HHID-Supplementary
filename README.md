@@ -1,4 +1,4 @@
-# HHID GitHub Pages Starter
+# HHID: A Human-Human Interaction Dataset for Contact-Aware Novel View Synthesis (Supplemntary)
 
 This is a ready-to-deploy static GitHub Pages starter for the HHID dataset website.
 
