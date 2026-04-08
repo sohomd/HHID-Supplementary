@@ -109,7 +109,7 @@
       <h2>Supplementary Material</h2>
       <div class="grid two">
         <div class="card">
-          <h3>3D Keypoints</h3>
+          <h3>Occlusion-Aware Analysis: 3D Keypoints and ISR vs IoU</h3>
           <p>3D Joint Reconstruction via Multi-View Triangulation and Identity Switching Rate (ISR) as a function of inter-subject occlusion (IoU). ISR increases sharply, indicating a distinct identity failure regime under sustained contact.</p>
           <img src="assets/images/VisualGraph.png" alt="3D Keypoints">
         </div>
@@ -174,7 +174,7 @@
             <source src="assets/videos/GSplat.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <p> Gaussian Splatting results on HHID for a handshake interaction, illustrating performance degradation under increasing human-human contact and occlusion.</p>
+          <p> Gaussian Splatting results on HHID for a handshake interaction, illustrating degradation under increasing human-human contact and occlusion. Although perceptual quality remains relatively high (LPIPS ↓), structural consistency deteriorates in high-overlap regions, reflected by reduced SSIM and visible identity mixing. As subjects become spatially entangled, ambiguous instance boundaries lead to blending artifacts and inconsistent identity assignment, consistent with increased ISR.</p>
         </div>
       </div>
     </section>
