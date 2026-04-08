@@ -149,26 +149,24 @@
         
           <p>
             During sustained human-human contact, the two subjects (orange and blue) become spatially entangled, 
-            leading to ambiguity in identity assignment across frames. To quantify this effect, we use the 
-            <strong>Identity Switching Rate (ISR)</strong>, defined as the proportion of frames with inconsistent identity assignment:
+            leading to ambiguity in identity assignment across frames. The proportion of frames with inconsistent identity assignment:
           </p>
         
           <p style="text-align:center;">
-            \[
-            \mathrm{ISR} = \frac{1}{T} \sum_{t=1}^{T} \mathbb{1}
-            \Big(
-            \mathrm{IoU}(P_A^t, G_B^t) > \mathrm{IoU}(P_A^t, G_A^t)
-            \;\;\text{or}\;\;
-            \mathrm{IoU}(P_B^t, G_A^t) > \mathrm{IoU}(P_B^t, G_B^t)
-            \Big)
-            \]
+          \[
+          \begin{aligned}
+          \mathrm{ISR} = \frac{1}{T} \sum_{t=1}^{T} \mathbb{1} \Big(&
+          \mathrm{IoU}(P_A^t, G_B^t) > \mathrm{IoU}(P_A^t, G_A^t) \\
+          & \;\;\text{or}\;\; \\
+          & \mathrm{IoU}(P_B^t, G_A^t) > \mathrm{IoU}(P_B^t, G_B^t)
+          \Big)
+          \end{aligned}
+          \]
           </p>
         
           <p>
             Here, \(P_A^t\) and \(P_B^t\) denote the predicted instance masks for subjects A and B at frame \(t\), 
             while \(G_A^t\) and \(G_B^t\) are the corresponding ground-truth masks. 
-            An identity switch is counted when a predicted region overlaps more with the opposite subject than the correct one. 
-            Higher ISR values indicate increased identity ambiguity, particularly under severe occlusion and contact.
           </p>
         </div>
         <div class="card">
@@ -177,7 +175,7 @@
             <source src="assets/videos/GSplat.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <p> Gaussian Splatting results on HHID for a handshake interaction, illustrating performance degradation under increasing human-human contact and occlusion. As the subjects become spatially entangled, identity mixing and rendering artifacts emerge in high-overlap regions, highlighting the challenges of maintaining identity and geometric consistency in contact-heavy scenarios.</p>
+          <p> Gaussian Splatting results on HHID for a handshake interaction, illustrating performance degradation under increasing human-human contact and occlusion.</p>
         </div>
       </div>
     </section>
