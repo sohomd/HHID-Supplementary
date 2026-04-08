@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>HHID Dataset</title>
@@ -139,26 +140,36 @@
       </div>
       <div class="grid two">
         <div class="card">
-          <h3>Switching Identity (ISR)</h3>
+          <h3>Identity Switching Rate (ISR)</h3>
+        
           <video controls width="100%" poster="assets/images/ISRTeaser.png">
             <source src="assets/videos/ISR.mp4" type="video/mp4"> 
             Your browser does not support the video tag.
           </video>
-              <p> During sustained human-human contact, the two subjects (orange and blue) become spatially entangled, leading to ambiguity in identity assignment across frames. Formally, ISR measures the proportion of frames in which identity assignment is inconsistent:</p>
-              
-              \[
-              \text{ISR} = \frac{1}{T} \sum_{t=1}^{T} \mathbb{1}
-              \Big(
-              \text{IoU}(P_A^t, G_B^t) > \text{IoU}(P_A^t, G_A^t)
-              \;\;\text{or}\;\;
-              \text{IoU}(P_B^t, G_A^t) > \text{IoU}(P_B^t, G_B^t)
-              \Big)
-              \]
-              
-              ```html
-              <p>
-              where \(P_A^t\) and \(P_B^t\) denote the predicted instance masks for subjects A and B at frame \(t\), and \(G_A^t\), \(G_B^t\) are the corresponding ground-truth masks. Higher ISR values indicate increased identity ambiguity, particularly under severe occlusion and contact.
-              </p>
+        
+          <p>
+            During sustained human-human contact, the two subjects (orange and blue) become spatially entangled, 
+            leading to ambiguity in identity assignment across frames. To quantify this effect, we use the 
+            <strong>Identity Switching Rate (ISR)</strong>, defined as the proportion of frames with inconsistent identity assignment:
+          </p>
+        
+          <p style="text-align:center;">
+            \[
+            \mathrm{ISR} = \frac{1}{T} \sum_{t=1}^{T} \mathbb{1}
+            \Big(
+            \mathrm{IoU}(P_A^t, G_B^t) > \mathrm{IoU}(P_A^t, G_A^t)
+            \;\;\text{or}\;\;
+            \mathrm{IoU}(P_B^t, G_A^t) > \mathrm{IoU}(P_B^t, G_B^t)
+            \Big)
+            \]
+          </p>
+        
+          <p>
+            Here, \(P_A^t\) and \(P_B^t\) denote the predicted instance masks for subjects A and B at frame \(t\), 
+            while \(G_A^t\) and \(G_B^t\) are the corresponding ground-truth masks. 
+            An identity switch is counted when a predicted region overlaps more with the opposite subject than the correct one. 
+            Higher ISR values indicate increased identity ambiguity, particularly under severe occlusion and contact.
+          </p>
         </div>
         <div class="card">
           <h3>Qualitative Results</h3>
